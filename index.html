@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div><p class="name">Max Daly</p></div>
+    <div><p class="logline">LANGUAGE FOR A VISUAL WORLD</p></div>
+    <div class="projectswrapper">
+      <p class="projectsheader">PAST WORK:</p>
+      <!-- Links to open mailer windows -->
+      <p class="project">
+        <a href="#" onclick="openWindow('win1')">subj: BETTER THAN LABUBU</a>
+      </p>
+      <p class="project">
+        <a href="#" onclick="openWindow('win2')">subj: BUY GOLD</a>
+      </p>
+      <p class="project">
+        <a href="#" onclick="openWindow('win3')"
+          >subj: FOR THE IRON DEFICIENT GIRLIES</a
+        >
+      </p>
+      <p class="project">
+        <a href="#" onclick="openWindow('win4')"
+          >subj: ARE YOU AFRAD OF THE DARK</a
+        >
+      </p>
+      <p class="project">
+        <a href="#" onclick="openWindow('win5')">subj: KNICKS IN 7</a>
+      </p>
+      <p class="project">
+        <a href="#" onclick="openWindow('win6')">subj: WE HAVE GAY STUFF</a>
+      </p>
+    </div>
+
+    <!-- Mailer windows -->
+    <div id="win1" class="window">
+      <div class="titlebar">
+        <span>MaxMail.net</span>
+        <button onclick="closeWindow('win1')">X</button>
+      </div>
+      <div class="content">
+        <img src="images/BETTER THAN LABUBU cropped.jpeg" alt="mailer" />
+      </div>
+    </div>
+
+    <div id="win2" class="window">
+      <div class="titlebar">
+        <span>Mailer 2</span>
+        <button onclick="closeWindow('win2')">X</button>
+      </div>
+      <div class="content">
+        <img src="images/BUY GOLD cropped.jpeg" />
+      </div>
+    </div>
+
+    <div id="win3" class="window">
+      <div class="titlebar">
+        <span>Mailer 3</span>
+        <button onclick="closeWindow('win3')">X</button>
+      </div>
+      <div class="content">
+        <img src="images/FOR THE IRON DEFICIENT GIRLIES cropped.jpeg" />
+      </div>
+    </div>
+    <div id="win4" class="window">
+      <div class="titlebar">
+        <span>Mailer 3</span>
+        <button onclick="closeWindow('win4')">X</button>
+      </div>
+      <div class="content">
+        <img src="images/WHO'S AFRAID OF THE DARK cropped.jpeg" />
+      </div>
+    </div>
+    <div id="win5" class="window">
+      <div class="titlebar">
+        <span>Mailer 3</span>
+        <button onclick="closeWindow('win5')">X</button>
+      </div>
+      <div class="content">
+        <img src="images/KNICKS IN 7 cropped.jpeg" />
+      </div>
+    </div>
+    <div id="win6" class="window">
+      <div class="titlebar">
+        <span>Mailer 3</span>
+        <button onclick="closeWindow('win6')">X</button>
+      </div>
+      <div class="content">
+        <img src="images/WE HAVE GAY STUFF cropped.jpeg" />
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+      let topZ = 1000;
+      let currentWin = null;
+      let offsetX = 0,
+        offsetY = 0;
+
+      function openWindow(id) {
+        const win = document.getElementById(id);
+        win.style.display = "flex";
+        bringToFront(win);
+      }
+
+      function closeWindow(id) {
+        document.getElementById(id).style.display = "none";
+      }
+
+      function bringToFront(elem) {
+        topZ++;
+        elem.style.zIndex = topZ;
+      }
+
+      // dragging for all windows
+      const windows = document.querySelectorAll(".window");
+
+      windows.forEach((win) => {
+        const bar = win.querySelector(".titlebar");
+
+        win.addEventListener("mousedown", () => bringToFront(win));
+
+        bar.addEventListener("mousedown", function (e) {
+          currentWin = win;
+          bringToFront(win);
+          offsetX = e.clientX - win.offsetLeft;
+          offsetY = e.clientY - win.offsetTop;
+          document.addEventListener("mousemove", dragMove);
+          document.addEventListener("mouseup", dragStop);
+        });
+      });
+
+      function dragMove(e) {
+        if (!currentWin) return;
+        currentWin.style.left = e.clientX - offsetX + "px";
+        currentWin.style.top = e.clientY - offsetY + "px";
+      }
+
+      function dragStop() {
+        currentWin = null;
+        document.removeEventListener("mousemove", dragMove);
+        document.removeEventListener("mouseup", dragStop);
+      }
+      window.onload = function () {
+        openWindow("win1"); // change 'win1' to the ID of the email window you want
+      };
+    </script>
+  </body>
+</html>
