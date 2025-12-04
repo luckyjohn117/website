@@ -1,60 +1,100 @@
-body {background-color: #ffffff; 
-  margin:0; 
+html, body {
+  background-color: #ffffff;
+  margin: 0;
   font-family: 'Times New Roman', Times, serif;
-cursor: url("images/cursors/cursorCA15.cur"), pointer}
-a:hover {cursor: url("images/cursors/handCA15.cur"), pointer;}
-.name {color: rgb(45, 45, 45); font-size: 8rem;
-text-align: left; margin: 20px 20px 0 20px;
-font-family: 'Times New Roman', Times, serif; letter-spacing: -.3px; filter: blur(.2px);
-text-shadow:
-    -1.9px 0 rgba(255, 0, 120, 0.55),  /* slightly left: magenta */
-     1.9px 0 rgba(0, 255, 255, 0.55),0 0 1px rgb(0, 0, 0);  /* slightly right: cyan */
-      -webkit-font-smoothing: none; /* For WebKit browsers (Chrome, Safari) */
-      -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
-   }
+  cursor: url("images/cursors/cursorCA15.cur"), pointer;
+}
 
-.logline { font-size: 1.4rem; font-weight: bold;
-  color: rgb(45, 45, 45);
-  text-shadow:
-    -1.3px 0 rgba(255, 0, 120, 0.55),  /* slightly left: magenta */
-     1.3px 0 rgba(0, 255, 255, 0.55);  /* slightly right: cyan */
-  margin: 4px 20px 16px 25px; /* small gap under name, then some gap below */}    
+a:hover {
+  cursor: url("images/cursors/handCA15.cur"), pointer;
+}
 
-.projectsheader {  width: 400px; font-weight: bold;
-  margin: 25px;      /* centers the 400px block */
-  text-align: left;      /* subject is left-aligned inside that block */
+.name {
   color: rgb(45, 45, 45);
+  font-size: 8rem;
+  text-align: left;
+  margin: 20px 20px 0 20px;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: -0.3px;
+  /* filter: blur(.0px);  <-- removed */
+
+  /* 1.9px ≈ 0.015em at 8rem size */
   text-shadow:
-    -1.2px 0 rgba(255, 0, 120, 0.55),  /* slightly left: magenta */
-     1.2px 0 rgba(0, 255, 255, 0.55);  /* slightly right: cyan */
-    letter-spacing: -.3px; filter: blur(.0px);
-     -webkit-font-smoothing: none; /* For WebKit browsers (Chrome, Safari) */
-      -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */}
- 
+    -0.015em 0 rgba(255, 0, 120, 0.55),  /* magenta */
+     0.015em 0 rgba(0, 255, 255, 0.55),  /* cyan */
+     0       0 0.01em rgb(0, 0, 0);      /* subtle dark halo */
+
+  -webkit-font-smoothing: none;      /* For WebKit browsers (Chrome, Safari) */
+  -moz-osx-font-smoothing: grayscale;/* For Firefox on macOS */
+}
+
+.logline {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: rgb(45, 45, 45);
+  /* 1.3px ≈ 0.06em at 1.4rem */
+  text-shadow:
+    -0.06em 0 rgba(255, 0, 120, 0.55),
+     0.06em 0 rgba(0, 255, 255, 0.55);
+  margin: 4px 20px 16px 25px;
+}
+
+.bio {font-size: 1rem;
+  font-weight: bold;
+  color: rgb(45, 45, 45);
+  /* 1.3px ≈ 0.06em at 1.4rem */
+  text-shadow:
+    -0.06em 0 rgba(255, 0, 120, 0.55),
+     0.06em 0 rgba(0, 255, 255, 0.55);
+  margin: 4px 800px 16px 25px;}
+
+.projectsheader {
+  width: 400px;
+  font-weight: bold;
+  margin: 25px;
+  text-align: left;
+  color: rgb(45, 45, 45);
+  /* same feel as logline */
+  text-shadow:
+    -0.06em 0 rgba(255, 0, 120, 0.55),
+     0.06em 0 rgba(0, 255, 255, 0.55);
+  letter-spacing: -0.3px;
+  /* filter: blur(.0px); <-- removed */
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .project {
   width: 400px;
-  margin: 25px;      /* centers the 400px block ***NOT ANYMORE< DELETED auto FUNCTION IN ORDER TO LEFT ALIGN**/
-  text-align: left;      /* subject is left-aligned inside that block */
+  margin: 25px;
+  text-align: left;
   color: rgb(0, 0, 228);
+
+  /* 0.8px ≈ 0.05em at ~1rem */
   text-shadow:
-    -0.8px 0 rgba(255, 0, 120, 0.55),  /* slightly left: magenta */
-     .8px 0 rgba(0, 255, 255, 0.55);  /* slightly right: cyan */
-      letter-spacing: -.3px; filter: blur(.2px);
-         -webkit-font-smoothing: none; /* For WebKit browsers (Chrome, Safari) */
-      -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
+    -0.05em 0 rgba(255, 0, 120, 0.55),
+     0.05em 0 rgba(0, 255, 255, 0.55);
+
+  letter-spacing: -0.3px;
+  /* filter: blur(.2px); <-- removed */
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .project a {
-  display: inline;       /* only the text area is clickable */
-  text-decoration: underline; /* optional: remove underline */
+  display: inline;
+  text-decoration: underline;
   font-weight: bold;
-  color: inherit;        /* inherit white from .project */
+  color: inherit;
 }
 
+.projectswrapper {
+  margin-top: 100px;
+  text-align: center;
+}
 
-.projectswrapper {margin-top: 100px; text-align: center;}
 .window {
-  width: 45%;                /* or whatever size you prefer */
+  width: 45%;
   height: 85%;
   background: #c0c0c0;
   border: 2px solid black;
@@ -73,10 +113,19 @@ text-shadow:
   padding: 4px;
   font-family: "Times New Roman", serif;
   font-weight: bold;
+  /* 0.8px ≈ 0.05em at ~1rem */
+  text-shadow:
+    -0.05em 0 rgba(255, 0, 120, 0.55),
+     0.05em 0 rgba(0, 255, 255, 0.55);
+
+  letter-spacing: -0.3px;
+  /* filter: blur(.2px); <-- removed */
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: url("images/cursors/handCA15.cur"), pointer; /* tells the user it can be dragged */
+  cursor: url("images/cursors/handCA15.cur"), pointer;
 }
 
 .titlebar button {
@@ -85,16 +134,9 @@ text-shadow:
   font-weight: bold;
   width: 26px;
   height: 22px;
-  cursor: url("images/cursors/handCA15.cur"), pointer; /* tells the user it can be dragged */
+  cursor: url("images/cursors/handCA15.cur"), pointer;
 }
 
-.content {
-  padding: 0;
-  overflow-y: auto;
-  background: white;
-  height: 100%;
-}
-/* Scrollable area already: */
 .content {
   padding: 0;
   overflow-y: auto;
@@ -104,43 +146,21 @@ text-shadow:
 
 /* WebKit-based browsers (Chrome, Edge, etc.) */
 .content::-webkit-scrollbar {
-  width: 14px; /* make it exist visibly */
+  width: 14px;
 }
 
 .content::-webkit-scrollbar-track {
-  background: #d0d0d0; /* rail color */
+  background: #d0d0d0;
 }
 
 .content::-webkit-scrollbar-thumb {
   background: #a0a0a0;
-  border: 2px solid #808080; /* fake Win95-ish edge */
+  border: 2px solid #808080;
   cursor: url("images/cursors/cursorCA15.cur"), pointer;
 }
 
 .content::-webkit-scrollbar-thumb:hover {
   cursor: url("images/cursors/handCA15.cur"), pointer;
-}
-.content img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-
-.titlebar button {
-  background: #c0c0c0;
-  border: 2px outset white;
-  font-weight: bold;
-  width: 26px;
-  height: 22px;
-  cursor: url("images/cursors/handCA15.cur"), pointer; /* tells the user it can be dragged */
-}
-
-.content {
-  padding: 0;
-  overflow-y: auto;
-  background: white;
-  height: 100%;
 }
 
 .content img {
@@ -150,6 +170,6 @@ text-shadow:
 }
 
 #win1 {
-  left: auto;      /* stop using the shared left value */
-  right: 7%;       /* pin it to the right instead */
+  left: auto;
+  right: 7%;
 }
