@@ -99,6 +99,19 @@ a,
   color: inherit;
 }
 
+.project a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mail-icon {
+  width: 30px;  /* adjust to taste */
+  height: 30px;
+  image-rendering: pixelated;
+}
+
+
 .contact-link {
   text-decoration: underline;
   font-weight: bold;
@@ -132,10 +145,14 @@ a,
 }
 
 .icon img {
-  width: 72px;
-  height: 72px;
+  width: 48px;
+  height: 48px;
   image-rendering: pixelated;
+  filter:
+    drop-shadow(-0.08em 0 rgba(255, 0, 119, 0.317))  /* magenta left */
+    drop-shadow( 0.1em 0 rgba(0, 255, 255, 0.347)); /* cyan right */
 }
+
 
 .icon-label {
   font-family: 'Times New Roman', Times, serif;
@@ -178,8 +195,8 @@ a,
   /* NO blur / modern shadow */
   box-shadow:
     1px 1px 0 #000,                 /* subtle desktop separation */
-    -.75px -.75px 0 rgba(255, 0, 120, .3), /* magenta fringe */
-     .75px  .75px 0 rgba(0, 255, 255, .3); /* cyan fringe */
+    -1px -1px 0 rgba(255, 0, 119, 0.176), /* magenta fringe */
+     1.1px  1.1px 0 rgba(0, 255, 255, .3); /* cyan fringe */
 
   z-index: 999;
 }
@@ -321,6 +338,9 @@ a,
   margin: 0;
   font-weight: bold;
 }
+
+.resume-image { width: 100%; height: auto; display: block; }
+
 
 #win1 {
   left: auto;
