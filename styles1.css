@@ -225,8 +225,8 @@ a,
 
 .window {
   width: 40vw;
-  height: 60vh;
-  max-width: 1000px; /* or whatever feels right */
+  height: clamp(100px, 65vh, 1100px);
+  max-width: 800px; /* or whatever feels right */
   background: #a8a8a8;
 
   /* Windows 95 3D frame */
@@ -250,17 +250,17 @@ a,
   z-index: 999;
 }
 
-#win1 { top: 12vh; left: calc(var(--rail-anchor) + 340px); 
+#win1 { top: 10.5vh; left: calc(var(--rail-anchor) + 340px); 
 }
 
 #win2 {
  
-  top: 1vh; left: calc(var(--rail-anchor) + 420px); 
+  top: -vh; left: calc(var(--rail-anchor) + 420px); 
 }
 
 #win3 {
   
-  top: 1vh; left: calc(var(--rail-anchor) + 500px); 
+  top: clamp(-110px, -18vh, 800px); left: calc(var(--rail-anchor) + 500px); 
 }
 
 .titlebar {
