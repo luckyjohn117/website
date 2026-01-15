@@ -8,6 +8,12 @@ body {
   cursor: url("images/cursors/cursorCA15.cur"), pointer;
 }
 
+:root {
+  --rail-anchor: 20vw;
+  --rail-width: min(650px, 90vw);
+  --rail-gap: 40px;
+}
+
 a:hover {
   cursor: url("images/cursors/handCA15.cur"), pointer;
 }
@@ -26,6 +32,13 @@ a,
   margin-right: auto;
   transform: none; /* nudge left */
   padding: 0 20px;
+}
+
+.left-rail{
+  position: relative;
+  left: var(--rail-anchor);                 /* anchor point */
+  transform: translateX(-50%); /* center the block on the anchor */
+  width: var(--rail-width);     /* keep it sane */
 }
 
 
@@ -49,9 +62,9 @@ a,
 }
 
 .name-wrap {
-  margin: 50px 20px 0 25px;
-  width: 600px;            /* display size */
-  height: 180px;
+  margin: 180px 20px 0px 25px;
+  width: 680px;            /* display size */
+  height: 190px;
 }
 #pixName {
   width: 100%;             /* scale up the low-res canvas */
@@ -72,14 +85,14 @@ a,
 
 
 .logline {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: rgb(45, 45, 45);
   /* 1.3px ≈ 0.06em at 1.4rem */
   text-shadow:
     -0.06em 0 rgba(255, 0, 120, 0.55),
      0.06em 0 rgba(0, 255, 255, 0.55);
-  margin: 20px 20px 16px 25px;
+  margin: 5px 20px 16px 25px;
 }
 
 .bio {font-size: 1.1rem;
@@ -92,7 +105,7 @@ a,
      width: 45vw;
      max-width: 580px;
 
-  margin: 4px 800px 16px 25px;}
+  }
 
 .projectsheader {
   width: 400px;
@@ -163,7 +176,7 @@ a,
   align-items: flex-start;
   width: 45vw;
   max-width: 580px;
-  margin: 50px 800px 8px 25px; /* mirror bio block positioning */
+  
 }
 
 .icon {
@@ -212,7 +225,7 @@ a,
 
 .window {
   width: 40vw;
-  height: 85%;
+  height: 60vh;
   max-width: 1000px; /* or whatever feels right */
   background: #a8a8a8;
 
@@ -223,8 +236,9 @@ a,
   border-bottom: 2px solid #6a6a6a;
 
   position: fixed;
-  top: 7%;
-  left: 7%;
+  top: 8vh;
+  left: calc(var(--rail-anchor) + (var(--rail-width) / 2) + var(--rail-gap));
+  transform: translate(var(--win-offset-x, 0px), var(--win-offset-y, 0px));
   display: none;
   flex-direction: column;
 
@@ -232,25 +246,21 @@ a,
   box-shadow:
     1px 1px 0 #000,                 /* subtle desktop separation */
     -1px -1px 0 rgba(255, 0, 119, 0.176), /* magenta fringe */
-     1.1px  1.1px 0 rgba(0, 255, 255, .3); /* cyan fringe */
-
+     1.1px  1.1px 0 rgba(0,255, 255, .3); /* cyan fringe */
   z-index: 999;
 }
 
-#win1 {
-  left: 750px;
-  top: 9%
-  
+#win1 { top: 12vh; left: calc(var(--rail-anchor) + 340px); 
 }
 
 #win2 {
-  left: 100px;
-  top: 3%
+ 
+  top: 1vh; left: calc(var(--rail-anchor) + 420px); 
 }
 
 #win3 {
-  left: 900px;
-  top: 3%
+  
+  top: 1vh; left: calc(var(--rail-anchor) + 500px); 
 }
 
 .titlebar {
@@ -392,5 +402,6 @@ a,
 }
 
 .resume-image { width: 100%; height: auto; display: block; }
+
 
 
