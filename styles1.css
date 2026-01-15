@@ -46,7 +46,7 @@ a,
   color: rgb(45, 45, 45);
   font-size: 6rem;
   text-align: left;
-  margin: 20px 20px 0 20px;
+  margin: 20px 20px 0px 20px;
   font-family: 'Times New Roman', Times, serif;
   letter-spacing: -0.3px;
   /* filter: blur(.0px);  <-- removed */
@@ -62,7 +62,7 @@ a,
 }
 
 .name-wrap {
-  margin: 180px 20px 0px 25px;
+  margin: 80px 20px 0px 25px;
   width: 680px;            /* display size */
   height: 190px;
 }
@@ -92,7 +92,7 @@ a,
   text-shadow:
     -0.06em 0 rgba(255, 0, 120, 0.55),
      0.06em 0 rgba(0, 255, 255, 0.55);
-  margin: 5px 20px 16px 25px;
+  margin: -35px 20px 16px 25px;
 }
 
 .bio {font-size: 1.1rem;
@@ -172,6 +172,7 @@ a,
 .icon-row {
   display: flex;
   gap: 32px;
+  margin-top: 60px;
   justify-content: center;
   align-items: flex-start;
   width: 45vw;
@@ -260,7 +261,7 @@ a,
 
 #win3 {
   
-  top: clamp(-110px, -18vh, 800px); left: calc(var(--rail-anchor) + 500px); 
+  top: clamp(-50px, -1vh, 800px); left: calc(var(--rail-anchor) + 500px); 
 }
 
 .titlebar {
