@@ -13,6 +13,7 @@ body {
   --rail-width: min(650px, 90vw);
   --rail-gap: 40px;
   --name-scale: .75;
+  --mobile-gap: 300px;
 }
 
 a:hover {
@@ -65,7 +66,8 @@ a,
 .name-wrap {
   margin: 80px auto 0px auto;
   width: calc(680px * var(--name-scale));            /* display size */
-  height: calc(190px * var(--name-scale));
+  aspect-ratio: 650 / 190;
+  height: auto;
 }
 #pixName {
   width: 100%;             /* scale up the low-res canvas */
@@ -248,6 +250,10 @@ a,
     margin-left: auto;
     margin-right: auto;
   }
+
+  .logline-break {
+    display: block;
+  }
 }
 
 
@@ -269,6 +275,12 @@ a,
 .projectswrapper {
   margin-top: 60px;
   text-align: center;
+}
+
+@media (max-width: 800px) {
+  .projectswrapper {
+    margin-top: var(--mobile-gap);
+  }
 }
 
 .window {

@@ -21,7 +21,10 @@
         </div>
 
         <div>
-          <p class="logline">COPYWRITER / OLYMPIC GOLD MEDALIST / LIAR</p>
+          <p class="logline">
+            COPYWRITER / OLYMPIC GOLD
+            <span class="logline-break">MEDALIST / LIAR</span>
+          </p>
         </div>
         <div class="projectswrapper">
           <p class="projectsheader">PAST WORK:</p>
@@ -254,6 +257,8 @@
         let topZ = 1000;
         let currentWin = null;
         let activeWin = null;
+        let activePointerId = null;
+        let currentBar = null;
         let dragStartX = 0,
           dragStartY = 0;
         let winStartX = 0,
@@ -314,10 +319,12 @@
         windows.forEach((win) => {
           const bar = win.querySelector(".titlebar");
 
-          win.addEventListener("mousedown", () => bringToFront(win));
+          win.addEventListener("pointerdown", () => bringToFront(win));
 
-          bar.addEventListener("mousedown", function (e) {
+          bar.addEventListener("pointerdown", function (e) {
+            if (e.target.closest("button")) return;
             currentWin = win;
+            currentBar = bar;
             bringToFront(win);
             const styles = getComputedStyle(win);
             winStartX =
@@ -326,23 +333,40 @@
               parseFloat(styles.getPropertyValue("--win-offset-y")) || 0;
             dragStartX = e.clientX;
             dragStartY = e.clientY;
-            document.addEventListener("mousemove", dragMove);
-            document.addEventListener("mouseup", dragStop);
+            activePointerId = e.pointerId;
+            bar.setPointerCapture(e.pointerId);
+            document.addEventListener("pointermove", dragMove);
+            document.addEventListener("pointerup", dragStop);
+            document.addEventListener("pointercancel", dragStop);
           });
         });
 
         function dragMove(e) {
           if (!currentWin) return;
+          if (activePointerId !== null && e.pointerId !== activePointerId) return;
           const dx = e.clientX - dragStartX;
           const dy = e.clientY - dragStartY;
           currentWin.style.setProperty("--win-offset-x", `${winStartX + dx}px`);
           currentWin.style.setProperty("--win-offset-y", `${winStartY + dy}px`);
         }
 
-        function dragStop() {
+        function dragStop(e) {
+          if (activePointerId !== null && e && e.pointerId !== activePointerId) {
+            return;
+          }
+          if (currentBar && activePointerId !== null) {
+            try {
+              currentBar.releasePointerCapture(activePointerId);
+            } catch (err) {
+              // ignore release errors for browsers without pointer capture
+            }
+          }
           currentWin = null;
-          document.removeEventListener("mousemove", dragMove);
-          document.removeEventListener("mouseup", dragStop);
+          currentBar = null;
+          activePointerId = null;
+          document.removeEventListener("pointermove", dragMove);
+          document.removeEventListener("pointerup", dragStop);
+          document.removeEventListener("pointercancel", dragStop);
         }
 
         // existing script...
