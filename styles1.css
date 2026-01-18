@@ -12,6 +12,7 @@ body {
   --rail-anchor: 20vw;
   --rail-width: min(650px, 90vw);
   --rail-gap: 40px;
+  --name-scale: .75;
 }
 
 a:hover {
@@ -62,9 +63,9 @@ a,
 }
 
 .name-wrap {
-  margin: 80px 20px 0px 25px;
-  width: 680px;            /* display size */
-  height: 190px;
+  margin: 80px auto 0px auto;
+  width: calc(680px * var(--name-scale));            /* display size */
+  height: calc(190px * var(--name-scale));
 }
 #pixName {
   width: 100%;             /* scale up the low-res canvas */
@@ -85,14 +86,16 @@ a,
 
 
 .logline {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: rgb(45, 45, 45);
   /* 1.3px ≈ 0.06em at 1.4rem */
   text-shadow:
     -0.06em 0 rgba(255, 0, 120, 0.55),
      0.06em 0 rgba(0, 255, 255, 0.55);
-  margin: -35px 20px 16px 25px;
+      
+  margin: -35px auto 16px auto;
+  text-align: center
 }
 
 .bio {font-size: 1.1rem;
@@ -109,8 +112,9 @@ a,
 
 .projectsheader {
   width: 400px;
+  font-size: .9rem;
   font-weight: bold;
-  margin: 25px 25px 25px 25px;
+  margin: 25px 25px 25px 70px;
   text-align: left;
   color: rgb(45, 45, 45);
   /* same feel as logline */
@@ -125,8 +129,9 @@ a,
 
 .project {
   width: 400px;
-  margin: 8px 25px 5px 25px; 
+  margin: 8px 25px 5px 70px; 
   text-align: left;
+  font-size: .9rem;
   color: rgb(0, 0, 228);
 
   /* 0.8px ≈ 0.05em at ~1rem */
@@ -175,8 +180,9 @@ a,
   margin-top: 60px;
   justify-content: center;
   align-items: flex-start;
-  width: 45vw;
-  max-width: 580px;
+  width: calc(680px * var(--name-scale));
+  margin-left: auto;
+  margin-right: auto;
   
 }
 
@@ -202,6 +208,48 @@ a,
     drop-shadow( 0.1em 0 rgba(0, 255, 255, 0.347)); /* cyan right */
 }
 
+@media (max-width: 800px) {
+  :root {
+    --rail-anchor: 50vw;
+  }
+
+  body {
+    padding: 0 12px;
+  }
+
+  .page {
+    padding: 0;
+  }
+
+  .left-rail {
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
+
+  .name-wrap {
+    width: min(100%, calc(680px * var(--name-scale)));
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .logline,
+  .bio,
+  .icon-row {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .projectsheader,
+  .project {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 
 .icon-label {
   font-family: 'Times New Roman', Times, serif;
@@ -209,7 +257,6 @@ a,
   font-size: 0.95rem;
   letter-spacing: -0.2px;
   color: rgb(45, 45, 45);
-  text-decoration: underline;
   text-shadow:
     -.08em 0 rgba(255, 0, 120, 0.55),
      .08em 0 rgba(0, 255, 255, 0.55);

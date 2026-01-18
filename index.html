@@ -317,16 +317,18 @@
           win.addEventListener("mousedown", () => bringToFront(win));
 
           bar.addEventListener("mousedown", function (e) {
-              currentWin = win;
-              bringToFront(win);
-              const styles = getComputedStyle(win);
-              winStartX = parseFloat(styles.getPropertyValue("--win-offset-x")) || 0;
-              winStartY = parseFloat(styles.getPropertyValue("--win-offset-y")) || 0;
-              dragStartX = e.clientX;
-              dragStartY = e.clientY;
-              document.addEventListener("mousemove", dragMove);
-              document.addEventListener("mouseup", dragStop);
-            });
+            currentWin = win;
+            bringToFront(win);
+            const styles = getComputedStyle(win);
+            winStartX =
+              parseFloat(styles.getPropertyValue("--win-offset-x")) || 0;
+            winStartY =
+              parseFloat(styles.getPropertyValue("--win-offset-y")) || 0;
+            dragStartX = e.clientX;
+            dragStartY = e.clientY;
+            document.addEventListener("mousemove", dragMove);
+            document.addEventListener("mouseup", dragStop);
+          });
         });
 
         function dragMove(e) {
@@ -345,16 +347,30 @@
 
         // existing script...
 
+        function getNameScale() {
+          const raw = getComputedStyle(document.documentElement)
+            .getPropertyValue("--name-scale")
+            .trim();
+          const scale = parseFloat(raw);
+          return Number.isFinite(scale) && scale > 0 ? scale : 1;
+        }
+
         function drawPixelName() {
           const c = document.getElementById("pixName");
           if (!c) return;
           const ctx = c.getContext("2d");
+          const scale = getNameScale();
+          c.width = Math.round(650 * scale);
+          c.height = Math.round(190 * scale);
           ctx.clearRect(0, 0, c.width, c.height);
           ctx.imageSmoothingEnabled = false;
           ctx.fillStyle = "rgb(45,45,45)";
-          ctx.font = "120px 'Times New Roman'";
+          ctx.font = `${120 * scale}px 'Times New Roman'`;
           ctx.textBaseline = "top";
-          ctx.fillText("Max Daly", 4, 4);
+          const text = "Max Daly";
+          const textWidth = ctx.measureText(text).width;
+          const x = (c.width - textWidth) / 2;
+          ctx.fillText(text, x, 4 * scale);
         }
         drawPixelName();
         window.onload = function () {
@@ -365,4 +381,3 @@
     </div>
   </body>
 </html>
-
