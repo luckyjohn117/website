@@ -16,6 +16,13 @@ body {
   --mobile-gap: 470px;
 }
 
+@media (max-width: 600px) {
+  :root {
+    --name-scale: 0.4;
+  }
+}
+
+
 a:hover {
   cursor: url("images/cursors/handCA15.cur"), pointer;
 }
@@ -248,7 +255,7 @@ a,
   }
 
   .logline {
-    margin-top: -40px;
+    margin-top: -25px;
   }
 
   .projectsheader,
@@ -330,7 +337,7 @@ a,
   }
 }
 
-#win1 { top: 18vh; left: calc(var(--rail-anchor) + 340px); 
+#win1 { top: 25vh; left: calc(var(--rail-anchor) + 340px); 
 }
 
 #win2 {
@@ -341,6 +348,9 @@ a,
 #win3 {
   
   top: clamp(-50px, 10vh, 800px); left: calc(var(--rail-anchor) + 500px); 
+}
+
+#win5 { top: 12vh; left: calc(var(--rail-anchor) + 500px); 
 }
 
 .titlebar {
