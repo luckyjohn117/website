@@ -234,6 +234,7 @@ a,
     width: min(100%, calc(680px * var(--name-scale)));
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
   }
 
   .logline,
@@ -312,6 +313,12 @@ a,
 }
 
 @media (max-width: 800px) {
+  .window {
+    height: 25vh;
+    width: 30vh;
+    overflow: auto;
+  }
+
   .window.mobile-slot {
     position: absolute;
   }
