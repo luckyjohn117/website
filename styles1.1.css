@@ -13,7 +13,7 @@ body {
   --rail-width: min(650px, 90vw);
   --rail-gap: 40px;
   --name-scale: .75;
-  --mobile-gap: 300px;
+  --mobile-gap: 490px;
 }
 
 a:hover {
@@ -34,6 +34,7 @@ a,
   margin-right: auto;
   transform: none; /* nudge left */
   padding: 0 20px;
+  padding-top: 190px;
 }
 
 .left-rail{
@@ -76,8 +77,8 @@ a,
   image-rendering: crisp-edges;
   display: block;
    filter:
-    drop-shadow(-0.15em 0 rgba(255, 0, 119, 0.354))
-    drop-shadow( 0.15em 0 rgba(0, 255, 255, 0.315))
+    drop-shadow(-0.1em 0 rgba(255, 0, 119, 0.258))
+    drop-shadow( 0.1em 0 rgba(0, 255, 255, 0.315))
     drop-shadow( 0 0 0.01em rgba(0, 0, 0, 0.6))
   
 }
@@ -88,7 +89,7 @@ a,
 
 
 .logline {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
   color: rgb(45, 45, 45);
   /* 1.3px ≈ 0.06em at 1.4rem */
@@ -210,7 +211,7 @@ a,
     drop-shadow( 0.1em 0 rgba(0, 255, 255, 0.347)); /* cyan right */
 }
 
-@media (max-width: 800px) {
+@media (max-width: 920px) {
   :root {
     --rail-anchor: 50vw;
   }
@@ -279,7 +280,7 @@ a,
   text-align: center;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 920px) {
   .projectswrapper {
     margin-top: var(--mobile-gap);
   }
@@ -312,10 +313,10 @@ a,
   z-index: 999;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 920px) {
   .window {
-    height: 25vh;
-    width: 30vh;
+    height: 29rem;
+    width: 30rem;
     overflow: auto;
   }
 
