@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="styles1.css" />
+    <link rel="stylesheet" href="styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -30,55 +30,28 @@
           <p class="projectsheader">PAST WORK:</p>
           <!-- Links to open mailer windows -->
           <p class="project">
-            <a href="#" onclick="return openMailer('win1', this);">
+            <a href="#" onclick="return openMailer('win5', this);">
               <img class="mail-icon" src="images/Letter.ico" alt="" />
-              subj: BETTER THAN LABUBU
+              subj: KNICKS IN 7
             </a>
           </p>
-          <div id="win1" class="window">
-            <div class="titlebar">
-              <span>MaxMail.net</span>
-              <button onclick="closeWindow('win1')"><span>×</span></button>
-            </div>
-            <div class="content">
-              <img src="images/BETTER THAN LABUBU cropped.jpeg" alt="mailer" />
-            </div>
-          </div>
-
           <p class="project">
             <a href="#" onclick="return openMailer('win2', this);">
               <img class="mail-icon" src="images/Letter.ico" alt="" />
               subj: BUY GOLD
             </a>
           </p>
-          <div id="win2" class="window">
-            <div class="titlebar">
-              <span>Mailer 2</span>
-              <button onclick="closeWindow('win2')"><span>×</span></button>
-            </div>
-            <div class="content">
-              <img src="images/BUY GOLD cropped.jpeg" alt="mailer" />
-            </div>
-          </div>
 
           <p class="project">
-            <a href="#" onclick="return openMailer('win3', this);">
-              <img class="mail-icon" src="images/Letter.ico" alt="" />
-              subj: FOR THE IRON DEFICIENT GIRLIES
+            <a href="#" onclick="return openMailer('win1', this);">
+              <img
+                class="mail-icon"
+                src="images/White letter (opened).ico"
+                alt=""
+              />
+              subj: BETTER THAN LABUBU
             </a>
           </p>
-          <div id="win3" class="window">
-            <div class="titlebar">
-              <span>Mailer 3</span>
-              <button onclick="closeWindow('win3')"><span>×</span></button>
-            </div>
-            <div class="content">
-              <img
-                src="images/FOR THE IRON DEFICIENT GIRLIES cropped.jpeg"
-                alt="mailer"
-              />
-            </div>
-          </div>
 
           <p class="project">
             <a href="#" onclick="return openMailer('win4', this);">
@@ -86,34 +59,13 @@
               subj: ARE YOU AFRAID OF THE DARK
             </a>
           </p>
-          <div id="win4" class="window">
-            <div class="titlebar">
-              <span>Mailer 3</span>
-              <button onclick="closeWindow('win4')"><span>×</span></button>
-            </div>
-            <div class="content">
-              <img
-                src="images/WHO'S AFRAID OF THE DARK cropped.jpeg"
-                alt="mailer"
-              />
-            </div>
-          </div>
 
           <p class="project">
-            <a href="#" onclick="return openMailer('win5', this);">
+            <a href="#" onclick="return openMailer('win3', this);">
               <img class="mail-icon" src="images/Letter.ico" alt="" />
-              subj: KNICKS IN 7
+              subj: FOR THE IRON DEFICIENT GIRLIES
             </a>
           </p>
-          <div id="win5" class="window">
-            <div class="titlebar">
-              <span>Mailer 3</span>
-              <button onclick="closeWindow('win5')"><span>×</span></button>
-            </div>
-            <div class="content">
-              <img src="images/KNICKS IN 7 cropped.jpeg" alt="mailer" />
-            </div>
-          </div>
 
           <p class="project">
             <a href="#" onclick="return openMailer('win6', this);">
@@ -121,15 +73,6 @@
               subj: WE HAVE GAY STUFF
             </a>
           </p>
-          <div id="win6" class="window">
-            <div class="titlebar">
-              <span>Mailer 3</span>
-              <button onclick="closeWindow('win6')"><span>×</span></button>
-            </div>
-            <div class="content">
-              <img src="images/WE HAVE GAY STUFF cropped.jpeg" alt="mailer" />
-            </div>
-          </div>
 
           <div class="icon-row">
             <a class="icon" href="mailto:maxkdaly@gmail.com">
@@ -162,7 +105,14 @@
           <button onclick="closeWindow('win1')"><span>×</span></button>
         </div>
         <div class="content">
-          <img src="images/BETTER THAN LABUBU cropped.jpeg" alt="mailer" />
+          <img
+            class="deferred-image"
+            data-src="images/BETTER THAN LABUBU cropped.jpeg"
+            alt="mailer"
+            loading="lazy"
+            decoding="async"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+          />
         </div>
       </div>
 
@@ -172,7 +122,14 @@
           <button onclick="closeWindow('win2')"><span>×</span></button>
         </div>
         <div class="content">
-          <img src="images/BUY GOLD cropped.jpeg" />
+          <img
+            class="deferred-image"
+            data-src="images/BUY GOLD cropped.jpeg"
+            alt="mailer"
+            loading="lazy"
+            decoding="async"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+          />
         </div>
       </div>
 
@@ -182,7 +139,14 @@
           <button onclick="closeWindow('win3')"><span>×</span></button>
         </div>
         <div class="content">
-          <img src="images/FOR THE IRON DEFICIENT GIRLIES cropped.jpeg" />
+          <img
+            class="deferred-image"
+            data-src="images/FOR THE IRON DEFICIENT GIRLIES cropped.jpeg"
+            alt="mailer"
+            loading="lazy"
+            decoding="async"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+          />
         </div>
       </div>
       <div id="win4" class="window">
@@ -191,7 +155,14 @@
           <button onclick="closeWindow('win4')"><span>×</span></button>
         </div>
         <div class="content">
-          <img src="images/WHO'S AFRAID OF THE DARK cropped.jpeg" />
+          <img
+            class="deferred-image"
+            data-src="images/WHO'S AFRAID OF THE DARK cropped.jpeg"
+            alt="mailer"
+            loading="lazy"
+            decoding="async"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+          />
         </div>
       </div>
       <div id="win5" class="window">
@@ -200,7 +171,14 @@
           <button onclick="closeWindow('win5')"><span>×</span></button>
         </div>
         <div class="content">
-          <img src="images/KNICKS IN 7 cropped.jpeg" />
+          <img
+            class="deferred-image"
+            data-src="images/KNICKS IN 7 cropped.jpeg"
+            alt="mailer"
+            loading="lazy"
+            decoding="async"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+          />
         </div>
       </div>
       <div id="win6" class="window">
@@ -209,7 +187,14 @@
           <button onclick="closeWindow('win6')"><span>×</span></button>
         </div>
         <div class="content">
-          <img src="images/WE HAVE GAY STUFF cropped.jpeg" />
+          <img
+            class="deferred-image"
+            data-src="images/WE HAVE GAY STUFF cropped.jpeg"
+            alt="mailer"
+            loading="lazy"
+            decoding="async"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+          />
         </div>
       </div>
       <div id="bioWin" class="window">
@@ -236,15 +221,12 @@
         <div class="content">
           <div class="window-body resume-body">
             <img
-              src="images/Max Daly_resume.png"
+              src="images/MaxDaly_resume4site.jpg"
               alt="Resume"
               class="resume-image"
             />
             <p class="resume-link">
-              <a
-                href="images/Max Daly_resume.pdf"
-                target="_blank"
-                rel="noopener"
+              <a href="images/MaxDaly_resume.pdf" target="_blank" rel="noopener"
                 >Open full resume</a
               >
             </p>
@@ -264,9 +246,60 @@
         let winStartX = 0,
           winStartY = 0;
 
+        function isMobileView() {
+          return window.matchMedia("(max-width: 920px)").matches;
+        }
+
+        function getMobileGap() {
+          const raw = getComputedStyle(document.documentElement)
+            .getPropertyValue("--mobile-gap")
+            .trim();
+          const gap = parseFloat(raw);
+          return Number.isFinite(gap) ? gap : 0;
+        }
+
+        function positionActiveWindowInMobileGap(win) {
+          document.querySelectorAll(".window").forEach((w) => {
+            w.classList.remove("mobile-slot");
+            w.style.removeProperty("top");
+            w.style.removeProperty("left");
+          });
+
+          if (!win || !isMobileView()) return;
+
+          const page = document.querySelector(".page");
+          const wrapper = document.querySelector(".projectswrapper");
+          if (!page || !wrapper) return;
+
+          const pageRect = page.getBoundingClientRect();
+          const wrapperRect = wrapper.getBoundingClientRect();
+          const gap = getMobileGap();
+          const gapTop = wrapperRect.top - pageRect.top - gap;
+          const winHeight = win.getBoundingClientRect().height;
+          const top = Math.max(0, gapTop + Math.max(0, (gap - winHeight) / 2));
+          const left = (page.clientWidth - win.offsetWidth) / 2;
+
+          win.classList.add("mobile-slot");
+          win.style.top = `${Math.round(top)}px`;
+          win.style.left = `${Math.round(left)}px`;
+        }
+
+        function loadDeferredImages(win) {
+          if (!win) return;
+          const images = win.querySelectorAll("img.deferred-image[data-src]");
+          images.forEach((img) => {
+            const src = img.getAttribute("data-src");
+            if (!src) return;
+            img.src = src;
+            img.removeAttribute("data-src");
+          });
+        }
+
         function openWindow(id) {
           const win = document.getElementById(id);
+          if (!win) return;
           win.style.display = "flex";
+          loadDeferredImages(win);
           bringToFront(win);
         }
 
@@ -291,15 +324,16 @@
           document.querySelectorAll(".window").forEach((w) => {
             w.classList.toggle("active-window", w === win);
           });
+          positionActiveWindowInMobileGap(win);
         }
 
         function getTopVisibleWindow() {
           const visible = Array.from(
-            document.querySelectorAll(".window")
+            document.querySelectorAll(".window"),
           ).filter((w) => w.style.display !== "none");
           return visible.sort(
             (a, b) =>
-              parseInt(b.style.zIndex || 0) - parseInt(a.style.zIndex || 0)
+              parseInt(b.style.zIndex || 0) - parseInt(a.style.zIndex || 0),
           )[0];
         }
 
@@ -343,7 +377,8 @@
 
         function dragMove(e) {
           if (!currentWin) return;
-          if (activePointerId !== null && e.pointerId !== activePointerId) return;
+          if (activePointerId !== null && e.pointerId !== activePointerId)
+            return;
           const dx = e.clientX - dragStartX;
           const dy = e.clientY - dragStartY;
           currentWin.style.setProperty("--win-offset-x", `${winStartX + dx}px`);
@@ -351,7 +386,11 @@
         }
 
         function dragStop(e) {
-          if (activePointerId !== null && e && e.pointerId !== activePointerId) {
+          if (
+            activePointerId !== null &&
+            e &&
+            e.pointerId !== activePointerId
+          ) {
             return;
           }
           if (currentBar && activePointerId !== null) {
@@ -397,8 +436,11 @@
           ctx.fillText(text, x, 4 * scale);
         }
         drawPixelName();
+        window.addEventListener("resize", () => {
+          positionActiveWindowInMobileGap(activeWin);
+        });
         window.onload = function () {
-          openWindow("win3");
+          openWindow("win5");
           openWindow("win1");
         };
       </script>
