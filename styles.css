@@ -73,6 +73,7 @@ a,
 
 .name-wrap {
   margin: 5vh auto 0px auto;
+  margin-bottom: 1px;
   width: calc(680px * var(--name-scale));            /* display size */
   aspect-ratio: 650 / 190;
   height: auto;
