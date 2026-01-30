@@ -12,13 +12,13 @@ body {
   --rail-anchor: 20vw;
   --rail-width: min(650px, 90vw);
   --rail-gap: 40px;
-  --name-scale: .75;
+  --name-scale: .5;
   --mobile-gap: 470px;
 }
 
 @media (max-width: 600px) {
   :root {
-    --name-scale: 0.4;
+    --name-scale: 0.3;
   }
 }
 
@@ -89,6 +89,16 @@ a,
     drop-shadow( 0 0 0.01em rgba(0, 0, 0, 0.6))
   
 }
+
+@media (max-width: 600px) {
+  #pixName {
+    filter:
+      drop-shadow(-0.08em 0 rgba(255, 0, 119, 0.25))
+      drop-shadow( 0.08em 0 rgba(0, 255, 255, 0.25))
+      drop-shadow( 0 0 0.005em rgba(0, 0, 0, 0.5));
+  }
+}
+
 .sr-only {
   position: absolute;
   left: -9999px;
@@ -242,7 +252,7 @@ a,
     width: min(100%, calc(680px * var(--name-scale)));
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 25px;
   }
 
   .logline,
@@ -255,7 +265,7 @@ a,
   }
 
   .logline {
-    margin-top: -25px;
+    margin-top: -20px;
   }
 
   .projectsheader,
