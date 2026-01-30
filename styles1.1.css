@@ -72,10 +72,16 @@ a,
 }
 
 .name-wrap {
-  margin: 80px auto 0px auto;
+  margin: 5vh auto 0px auto;
   width: calc(680px * var(--name-scale));            /* display size */
   aspect-ratio: 650 / 190;
   height: auto;
+}
+
+@media (min-width: 920px) and (max-height: 900px) {
+  .name-wrap {
+    margin-top: -10rem;
+  }
 }
 #pixName {
   width: 100%;             /* scale up the low-res canvas */
@@ -265,7 +271,7 @@ a,
   }
 
   .logline {
-    margin-top: -20px;
+    margin: .5px auto 16px auto;
   }
 
   .projectsheader,
