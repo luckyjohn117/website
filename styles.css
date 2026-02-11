@@ -369,6 +369,8 @@ a,
 
 #win5 { top: 12vh; left: calc(var(--rail-anchor) + 500px); 
 }
+#win7 { top: 18vh; left: calc(var(--rail-anchor) + 420px); }
+#win8 { top: 30vh; left: calc(var(--rail-anchor) + 380px); }
 
 .titlebar {
   background: #a3a3a3;      /* inactive Win95 gray, darkened */
@@ -486,8 +488,15 @@ a,
 }
 
 .bio-body {
-  font-size: 1rem;
-  color: #111;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: rgb(45, 45, 45);
+  text-shadow:
+    -0.04em 0 rgba(255, 0, 120, 0.55),
+     0.04em 0 rgba(0, 255, 255, 0.55);
+  letter-spacing: -0.4px;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .resume-body {
