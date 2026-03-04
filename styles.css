@@ -204,7 +204,7 @@ a,
 .icon-row {
   display: flex;
   gap: 32px;
-  margin-top: 60px;
+  margin-top: 41px;
   justify-content: center;
   align-items: flex-start;
   width: calc(680px * var(--name-scale));
@@ -354,23 +354,26 @@ a,
   }
 }
 
-#win1 { top: 25vh; left: calc(var(--rail-anchor) + 340px); 
+#win1 { top: clamp(-50px, 10vh, 800px); left: calc(var(--rail-anchor) + 480px); /*labubu*/
 }
 
 #win2 {
  
-  top: vh; left: calc(var(--rail-anchor) + 420px); 
+  top: 15vh; left: calc(var(--rail-anchor) + 420px); /*buy gold*/
 }
 
-#win3 {
-  
-  top: clamp(-50px, 10vh, 800px); left: calc(var(--rail-anchor) + 500px); 
+#win3 {top: 28vh; left: calc(var(--rail-anchor) + 340px) /*iron deficiency*/
+  ; 
 }
 
-#win5 { top: 12vh; left: calc(var(--rail-anchor) + 500px); 
+#win4 {top: 29vh; left: calc(var(--rail-anchor) + 450px) /*night light*/
+  ; 
 }
-#win7 { top: 18vh; left: calc(var(--rail-anchor) + 420px); }
-#win8 { top: 30vh; left: calc(var(--rail-anchor) + 380px); }
+
+#win5 { top: 25vh; left: calc(var(--rail-anchor) + 575px); /*knicks*/
+}
+#win7 { top: 6vh; left: calc(var(--rail-anchor) + 500px); } /*flatware*/
+#win8 { top: 30vh; left: calc(var(--rail-anchor) + 380px); } /*shower curtain*/
 
 .titlebar {
   background: #a3a3a3;      /* inactive Win95 gray, darkened */

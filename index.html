@@ -51,7 +51,7 @@
             <a href="#" onclick="return openMailer('win1', this);">
               <img
                 class="mail-icon"
-                src="images/White letter (opened).ico"
+                src="images/Letter.ico"
                 alt=""
               />
               subj: BETTER THAN LABUBU
@@ -67,7 +67,7 @@
 
           <p class="project">
             <a href="#" onclick="return openMailer('win3', this);">
-              <img class="mail-icon" src="images/Letter.ico" alt="" />
+              <img class="mail-icon" src="images/White letter (opened).ico" alt="" />
               subj: FOR THE IRON DEFICIENT GIRLIES
             </a>
           </p>
@@ -81,15 +81,25 @@
 
           <p class="project">
             <a href="#" onclick="return openMailer('win7', this);">
-              <img class="mail-icon" src="images/Letter.ico" alt="" />
-              subj: SABRE FLATWARE
+              <img
+                class="mail-icon"
+                src="images/Folder.ico"
+                data-opened-src="images/Web doc open.ico"
+                alt=""
+              />
+              FANCY-FLATWARE.jpg
             </a>
           </p>
 
           <p class="project">
             <a href="#" onclick="return openMailer('win8', this);">
-              <img class="mail-icon" src="images/Letter.ico" alt="" />
-              subj: 'SUN' SHOWER CURTAIN
+              <img
+                class="mail-icon"
+                src="images/Folder.ico"
+                data-opened-src="images/Web doc open.ico"
+                alt=""
+              />
+              SHOWER-CURTAIN.jpg
             </a>
           </p>
 
@@ -218,7 +228,7 @@
       </div>
       <div id="win7" class="window">
         <div class="titlebar">
-          <span>SABRE FLATWARE PRODUCT BIO.jpg</span>
+          <span>comingsoon.com/SABREFLATWARE</span>
           <button onclick="closeWindow('win7')"><span>×</span></button>
         </div>
         <div class="content">
@@ -234,7 +244,7 @@
       </div>
       <div id="win8" class="window">
         <div class="titlebar">
-          <span>SUN SHOWER CURTAIN PRODUCT BIO.jpg</span>
+          <span>comingsoon.com/SHOWERCURTAIN</span>
           <button onclick="closeWindow('win8')"><span>×</span></button>
         </div>
         <div class="content">
@@ -399,7 +409,8 @@
           const icon = linkEl.querySelector(".mail-icon");
           if (icon && !icon.dataset.opened) {
             icon.dataset.opened = "true";
-            icon.src = "images/White letter (opened).ico";
+            icon.src =
+              icon.dataset.openedSrc || "images/White letter (opened).ico";
           }
           return false; // prevent jump
         }
@@ -497,8 +508,8 @@
           positionActiveWindowInMobileGap(activeWin);
         });
         window.onload = function () {
-          openWindow("win5");
-          openWindow("win1");
+          openWindow("win7");
+          openWindow("win3");
         };
       </script>
     </div>
